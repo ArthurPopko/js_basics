@@ -25,5 +25,5 @@ Create function studentsGrade(student) that:
 		marks: [20, 30, 60, 70]
 	}
 	function studentsGrade(student){...}
-	Output: 'The Artur has an average grade: F'
+	Output: 'Artur has an average grade: F'
 */
