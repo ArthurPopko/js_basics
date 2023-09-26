@@ -4,10 +4,10 @@
 
 ### Good to know before start:
 
-- [] Functional testing - sufficient
-- [] CLI - basics
-- [] GIT and GITHUB - basics
-- [] HTML and CSS - basics
-- [] API testing with postman - basics
+- Functional testing - sufficient
+- CLI - basics
+- GIT and GITHUB - basics
+- HTML and CSS - basics
+- API testing with postman - basics
 
 ### Recommended before start: [Тестирование ПО с нуля. Теория + Практика](https://stepik.org/course/171826)
