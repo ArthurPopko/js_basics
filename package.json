@@ -1,0 +1,15 @@
+{
+  "name": "js_basics",
+  "version": "1.0.0",
+  "description": "js basic tutorial",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artur Papko",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "prompt-sync": "^4.2.0"
+  }
+}
