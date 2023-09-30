@@ -11,3 +11,7 @@
 - API testing with postman - basics
 
 ### Recommended before start: [Тестирование ПО с нуля. Теория + Практика](https://stepik.org/course/171826)
+
+## Initial setup instructions:
+
+- npm install
