@@ -1,4 +1,5 @@
-//! return array with squares from input array, input array is always sorted - yandex interview
+//! Given an integer array sorted in non-decreasing order,
+//! return an array of the squares of each number sorted in non-decreasing order.
 let arr = [-1, 0, 9]
 
 function sqArr(arr) {
