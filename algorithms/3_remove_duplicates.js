@@ -14,9 +14,9 @@ Return k.
 
 //! O(n)
 let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-//			   1  2  3  4              ^
-//			            ^
-
+//			            ^              ^
+//			   1  2  3  4
+//
 var removeDuplicates = function (nums) {
 	let left = 0,
 		right = 1,
@@ -24,11 +24,9 @@ var removeDuplicates = function (nums) {
 
 	for (let i = 0; i < nums.length - 1; i++) {
 		if (nums[left] === nums[right]) {
-			nums[right] = '-'
 			right++
 		} else {
 			nums[left + 1] = nums[right]
-			nums[right] = '-'
 			right++
 			left++
 			unique = left + 1
@@ -37,4 +35,17 @@ var removeDuplicates = function (nums) {
 	return unique
 }
 
-console.log(removeDuplicates(nums))
+var removeDuplicatesOptimized = function (nums) {
+	let left = 0
+
+	for (let right = 1; right < nums.length; right++) {
+		if (nums[left] !== nums[right]) {
+			nums[left + 1] = nums[right]
+			left++
+		}
+	}
+	return left + 1
+}
+
+// console.log(removeDuplicates(nums))
+console.log(removeDuplicatesOptimized(nums))
