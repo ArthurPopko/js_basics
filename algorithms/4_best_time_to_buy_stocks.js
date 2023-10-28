@@ -18,23 +18,22 @@ before you sell.
 */
 //! O(n):
 let prices_1 = [7, 1, 5, 3, 6, 4]
-//				   ^  ^
+//				   ^           ^
+//					  4  2  5  3
 
 var maxProfit = function (prices) {
 	let left = 0,
-		right = 1,
 		maxProfit = 0
 
-	while (right < prices.length) {
+	for (let right = 1; right < prices.length; right++) {
 		if (prices[left] > prices[right]) {
 			left = right
 		}
 		if (prices[right] - prices[left] > maxProfit) {
-			console.log(maxProfit)
 			maxProfit = prices[right] - prices[left]
 		}
-		right++
 	}
 	return maxProfit
 }
+
 console.log(maxProfit(prices_1))
