@@ -11,36 +11,30 @@ contain the unique elements in the order they were present in nums initially.
 The remaining elements of nums are not important as well as the size of nums.
 Return k.
 */
-//! O(n^2)
-var removeDuplicates_On2 = function (nums) {
-	for (let i = 0; i < nums.length; i++) {
-		if (nums[i] === nums[i + 1]) {
-			nums.splice(i, 1)
-			i--
-		}
-	}
-	console.log(nums)
-	return nums.length
-}
 
 //! O(n)
-/*
-[0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
-            l^               r^
-l=0
-r=1
-if arr[l] !== arr[r] => arr[l+1] = arr[r], r++, l++
-else l++
- */
+let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+//			   1  2  3  4              ^
+//			            ^
+
 var removeDuplicates = function (nums) {
-	let left = 0
-	for (let right = 1; right < nums.length; right++) {
-		if (nums[right] !== nums[left]) {
-			nums[++left] = nums[right]
+	let left = 0,
+		right = 1,
+		unique = 0
+
+	for (let i = 0; i < nums.length - 1; i++) {
+		if (nums[left] === nums[right]) {
+			nums[right] = '-'
+			right++
+		} else {
+			nums[left + 1] = nums[right]
+			nums[right] = '-'
+			right++
+			left++
+			unique = left + 1
 		}
 	}
-	return ++left
+	return unique
 }
 
-let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 console.log(removeDuplicates(nums))
