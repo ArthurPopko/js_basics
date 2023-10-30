@@ -12,9 +12,9 @@ The remaining elements of nums are not important as well as the size of nums.
 Return k.
 */
 
-let numsBruteForce = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9]
-let numsOptimized = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9]
-let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 1]
+let numsBruteForce = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+let numsOptimized = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 //			            ^              ^
 //			   1  2  3  4
 //
