@@ -12,17 +12,39 @@ The remaining elements of nums are not important as well as the size of nums.
 Return k.
 */
 
-//! O(n)
-let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+let numsBruteForce = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9]
+let numsOptimized = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9]
+let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 1]
 //			            ^              ^
 //			   1  2  3  4
 //
+
+//! O(n^2), O(n)
+var removeDuplicatesBruteForce = function (nums) {
+	let unique = []
+	let count = 0
+	for (let i = 0; i < nums.length; i++) {
+		count++
+		for (let j = i + 1; j < nums.length; j++) {
+			count++
+			if (nums[i] === nums[j]) {
+				i++
+			}
+		}
+		unique.push(nums[i])
+	}
+	console.log('count:', count)
+	return unique.length
+}
+
+//! O(n), O(1)
 var removeDuplicates = function (nums) {
 	let left = 0,
 		right = 1,
 		unique = 0
 
 	for (let i = 0; i < nums.length - 1; i++) {
+		console.log('i:', i)
 		if (nums[left] === nums[right]) {
 			right++
 		} else {
@@ -39,6 +61,7 @@ var removeDuplicatesOptimized = function (nums) {
 	let left = 0
 
 	for (let right = 1; right < nums.length; right++) {
+		console.log('right:', right)
 		if (nums[left] !== nums[right]) {
 			nums[left + 1] = nums[right]
 			left++
@@ -46,6 +69,12 @@ var removeDuplicatesOptimized = function (nums) {
 	}
 	return left + 1
 }
-
-// console.log(removeDuplicates(nums))
-console.log(removeDuplicatesOptimized(nums))
+// console.log(
+// 	'removeDuplicatesBruteForce:',
+// 	removeDuplicatesBruteForce(numsBruteForce)
+// )
+console.log(
+	'removeDuplicatesOptimized:',
+	removeDuplicatesOptimized(numsOptimized)
+)
+// console.log('removeDuplicates:', removeDuplicates(nums))
