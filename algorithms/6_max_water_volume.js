@@ -18,8 +18,8 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 			can contain is 49.
 */
 
-let height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
-//			  ^                       ^
+let height = [1, 8, 6, 2, 5, 4, 8, 3, 7] // 49
+//			     ^                    ^
 
 var maxArea = function (height) {
 	let left = 0,
@@ -27,10 +27,17 @@ var maxArea = function (height) {
 		maxVolume = 0
 
 	while (left < right) {
-		let currentVolume = Math.min(height[left], height[right]) * (right - left)
-		maxVolume = Math.max(maxVolume, currentVolume)
-		if (height[left] < height[right]) left++
-		else right--
+		let currentVolume = 0
+		if (height[left] < height[right]) {
+			currentVolume = height[left] * (right - left)
+			left++
+		} else {
+			currentVolume = height[right] * (right - left)
+			right--
+		}
+		if (maxVolume < currentVolume) {
+			maxVolume = currentVolume
+		}
 	}
 	return maxVolume
 }
