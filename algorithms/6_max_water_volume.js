@@ -22,16 +22,15 @@ let height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 //			  ^                       ^
 
 var maxArea = function (height) {
-	let leftLine = 0,
-		rightLine = height.length - 1,
+	let left = 0,
+		right = height.length - 1,
 		maxVolume = 0
 
-	while (leftLine < rightLine) {
-		let currentVolume =
-			Math.min(height[leftLine], height[rightLine]) * (rightLine - leftLine)
+	while (left < right) {
+		let currentVolume = Math.min(height[left], height[right]) * (right - left)
 		maxVolume = Math.max(maxVolume, currentVolume)
-		if (height[leftLine] < height[rightLine]) leftLine++
-		else rightLine--
+		if (height[left] < height[right]) left++
+		else right--
 	}
 	return maxVolume
 }
