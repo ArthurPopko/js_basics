@@ -41,4 +41,18 @@ var maxArea = function (height) {
 	}
 	return maxVolume
 }
+
+var maxAreaMath = function (height) {
+	let left = 0,
+		right = height.length - 1,
+		maxVolume = 0
+
+	while (left < right) {
+		let currentVolume = Math.min(height[left], height[right]) * (right - left)
+		maxVolume = Math.max(maxVolume, currentVolume)
+		height[left] < height[right] ? left++ : right--
+	}
+	return maxVolume
+}
+console.log('maxAreaMath:', maxAreaMath(height))
 console.log('maxArea:', maxArea(height))
