@@ -9,30 +9,21 @@
 "(())((()())())"  =>  true
  */
 
-let str = '(())((()())()(()'
-//		   ^^
-//todo: unresolved!!!
+let str = '())(()'
+//		   ^
+//  count = 0
 
 function validParentheses(parenStr) {
-	let parentR = false,
-		l = 0,
-		r = parenStr.length - 1
-
-	if (!parenStr.length % 0) return false
-	if (parenStr[0] === ')' || parenStr[parenStr.length - 1] === '(') return false
-
+	let count = 0
 	for (let i = 0; i < parenStr.length; i++) {
 		if (parenStr[i] === '(') {
-			for (let j = i + 1; j < parenStr.length; j++) {
-				if (parenStr[j] === ')') {
-					parentR = true
-					break
-				}
-				parentR = false
-			}
+			count++
+		} else {
+			count--
 		}
+		if (count < 0) return false
 	}
-	return parentR
+	return count === 0
 }
 
 console.log('validParentheses(parenStr):', validParentheses(str))
