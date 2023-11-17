@@ -20,6 +20,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 let height = [1, 8, 6, 2, 5, 4, 8, 3, 7] // 49
 //			     ^                    ^
+// 2 pointers, while pointers don't not meet each other, maxVolume, currentVolume
 
 var maxArea = function (height) {
 	let left = 0,
